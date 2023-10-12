@@ -1,0 +1,37 @@
+<section>
+  <div class="parent">
+    <swiper  [navigation]="false" [pagination]="true" [spaceBetween]="0" [loop]="true" [slidesPerView]="1"
+    [freeMode]="true" [speed]="500" [watchSlidesProgress]="true" [autoplay]="true" class=" h-100 w-100">
+      <ng-template swiperSlide>
+        <div class="slide_image" style="background: url('../../../assets/images/slide-1.jpg');" >
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="slide_image" style="background: url('../../../assets/images/slide-2.jpg');" >
+        </div>
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <div class="slide_image" style="background: url('../../../assets/images/slide-3.jpg');">
+        </div>
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <div class="slide_image" style="background: url('../../../assets/images/slide-4.jpg');">
+        </div>
+      </ng-template>
+  </swiper>
+  <div class="container h-100 child d-grid align-items-center" >
+<div class="row ">
+  <div class="col-12 col-md-7 glass">
+    <h1 class="title">
+      Welcome to Sri Lanka Railways
+    </h1>
+    <p class="sub_text mt-3">Online Advance Train Seats Reservation</p>
+    <button class="login_btn" (click)="toLogin()">Login</button>
+  </div>
+</div>
+  </div>
+  </div>
+
+</section>

@@ -1,0 +1,69 @@
+<div class="nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-1 d-flex">
+        <div class="nav_item m-auto">
+          <mat-icon>home</mat-icon>Home
+        </div>
+      </div>
+      <ng-container *ngIf="log_user_type==0">
+        <div class="col-2">
+          <div class="nav_item " (click)="navigation(0)">
+            <mat-icon>person</mat-icon>profile
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="nav_item" (click)="navigation(1)">
+            <mat-icon>calendar_month</mat-icon>Ticket Booking
+          </div>
+        </div>
+        <div class="col-4"></div>
+      </ng-container>
+      <ng-container *ngIf="log_user_type==1">
+        <div class="col-4">
+          <div class="nav_item justify-content-center" (click)="navigation(0)">
+            <mat-icon>person</mat-icon>profile Management
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="nav_item" (click)="navigation(1)">
+            <mat-icon>calendar_month</mat-icon>Ticket Schedule Management
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </ng-container>
+
+
+      <div class="col-2 d-flex">
+        <div class="nav_item m-auto text-end justify-content-end">
+          <mat-icon>power_settings_new</mat-icon>LogOut
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<section class="dashback">
+  <div class="container h-100 py-5" style="background-color: rgba(255, 0, 0, 0.081);">
+    <ng-container *ngIf="log_user_type==0">
+      <app-profile *ngIf="selected_page==0"></app-profile>
+      <app-ticket-booking *ngIf="selected_page==1"></app-ticket-booking>
+    </ng-container>
+    <ng-container *ngIf="log_user_type==1">
+      {{selected_page}}
+      <app-profile-management *ngIf="selected_page==0"></app-profile-management>
+      <app-train-schedule-management *ngIf="selected_page==1"></app-train-schedule-management>
+    </ng-container>
+
+
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row p-4">
+        <div class="col text-center m-auto">Ticket Reservation Center</div>
+      </div>
+    </div>
+
+  </div>
+</section>

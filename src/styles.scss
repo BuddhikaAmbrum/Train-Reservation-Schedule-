@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.title{
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 2.5rem !important;
+}
+.sub_text{
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 1.5rem !important; 
+}
+mat-dialog-container {
+  display: block;
+  padding: 0px !important;
+  border-radius: 20px !important;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 20px !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.timepicker-overlay {
+  z-index: 1046 !important;
+}

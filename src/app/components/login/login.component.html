@@ -1,0 +1,34 @@
+<div class="row m-0 p-0 " style="overflow: hidden;">
+  <div class="col-12 col-md-6 p-5">
+    <h1 class="title">Login</h1>
+    <form [formGroup]="signin">
+      <mat-form-field class="text-field w-100 mt-4">
+        <input  matInput type="text" placeholder="Username" formControlName="username">
+        <mat-icon matPrefix>person_outline</mat-icon>
+        
+      </mat-form-field>
+    
+      <mat-hint class="text-danger" *ngIf="errors.username">{{errors['username']}}</mat-hint>
+     
+
+    <mat-form-field class="text-field w-100 mt-4">
+      <input matInput required placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon class="material-icons-outlined">{{hide ? 'visibility_off_outline' : 'visibility_outline'}}</mat-icon>
+      </button>
+      <mat-icon class="material-icons-outlined" matPrefix>lock_outline</mat-icon>
+      
+    </mat-form-field>
+   
+    <mat-hint class="text-danger" *ngIf="errors.password">{{errors['password']}}</mat-hint>
+    
+  </form>
+  <div class="w100 d-flex">
+    <button class="primary-button col-5 px-4 mt-5 mx-auto " (click)="login()">Login </button>
+  </div>
+  </div>
+  <div class="col-12 col-md-6 p-0">
+    <img src="../../../assets/images/slide-1.jpg" class="w-100 h-100" alt="" srcset="">
+  </div>
+</div>

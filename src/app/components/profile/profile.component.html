@@ -1,0 +1,51 @@
+<section class="py-4 h-100 d-flex">
+  <div class="content m-auto">
+    <form [formGroup]="signin">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Profile</h1>
+        </div>
+        <div class="col-6 m-auto">
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput (focus)="true" type="text" placeholder="NIC" formControlName="nic">
+            <mat-icon matPrefix>badge</mat-icon>
+
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.nic">{{errors['nic']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput type="text" placeholder="Name" formControlName="name">
+            <mat-icon matPrefix>person</mat-icon>
+
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.name">{{errors['name']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput type="email" placeholder="Email" formControlName="email">
+            <mat-icon matPrefix>mail</mat-icon>
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.email">{{errors['email']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput type="tel" placeholder="Phone" formControlName="phone">
+            <mat-icon matPrefix>call_outline</mat-icon>
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.phone">{{errors['phone']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <textarea matInput type="text" placeholder="Address" formControlName="address"></textarea>
+            <mat-icon matPrefix>home_outline</mat-icon>
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.address">{{errors['address']}}</mat-hint>
+
+          <div class="row">
+            <div class="col-6 mt-2"> 
+              <button class=" p-3 w-100 btn btn-primary">UPDATE</button>
+             </div>
+            <div class="col-6 mt-2"> <button class=" p-3 w-100 btn btn-light">CANCEL</button> </div>
+          </div>  
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

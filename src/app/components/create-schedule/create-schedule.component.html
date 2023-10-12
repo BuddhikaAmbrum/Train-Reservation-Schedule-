@@ -1,0 +1,59 @@
+<section class=" h-100 d-flex">
+  <div class="content m-auto">
+    <form [formGroup]="signin">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>{{data.title}}</h1>
+        </div>
+        <div class="col-6 m-auto">
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput  type="text" placeholder="Train Name" formControlName="train">
+            <mat-icon matPrefix>train</mat-icon>
+
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.train">{{errors['train']}}</mat-hint>
+
+          <div class="col-lg-12  mt-4 col-md-12 ">
+            <div class="w-100 h-100 row m-0 light_back  "  [ngStyle]="{'padding-top':  selectedDate?'0%':'3%'} ">
+                <div class="col-10 p-0">
+                    <mat-label
+                        [ngClass]="(selectedDate)?'small_text_caption ':'small_text'">Start Date Time</mat-label>
+                    <div class="row m-0 p-0 w-100" *ngIf="selectedDate">
+                        <p class="col-8 m-0">{{selectedDate}}</p>
+                        <p class="col-4 m-0">{{selectedTime}}</p>
+                    </div>
+                </div>
+
+                <div class="col-2 d-flex text-end p-0 active-list-end"
+                    (click)="opendatetimerpicker()">
+                    <mat-icon matSuffix class=" m-auto purple-text">calendar_month</mat-icon>
+                </div>
+                <!-- <mat-hint class="text-danger" *ngIf="errors.company">{{errors['start_time']}}</mat-hint> -->
+            </div>
+        </div>
+          <mat-hint class="text-danger" *ngIf="errors.time">{{errors['time']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput type="text" placeholder="Start" formControlName="start">
+            <mat-icon matPrefix>start</mat-icon>
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.start">{{errors['start']}}</mat-hint>
+
+          <mat-form-field class="text-field w-100 mt-4">
+            <input matInput type="text" placeholder="Departure" formControlName="departure">
+            <mat-icon matPrefix>departure_board</mat-icon>
+          </mat-form-field>
+          <mat-hint class="text-danger" *ngIf="errors.departure">{{errors['departure']}}</mat-hint>
+
+          
+          <div class="row">
+            <div class="col-6 mt-2"> 
+              <button class=" p-3 w-100 btn btn-primary" (click)="sendData()">{{data.positive_btn}}</button>
+             </div>
+            <div class="col-6 mt-2"> <button class=" p-3 w-100 btn btn-light" [mat-dialog-close]="">CANCEL</button> </div>
+          </div>  
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
